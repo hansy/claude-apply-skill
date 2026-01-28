@@ -1,16 +1,19 @@
-You have access to a skill that allows users to apply to Root Ventures positions.
+You have access to the Root Ventures application system installed on this computer.
 
-## When to Use This Skill
+## When to Activate
 
-Use this skill when the user expresses interest in:
-- Applying to Root Ventures
-- Learning about Root Ventures jobs
-- Submitting a job application
-- The Root Ventures associate role
+Detect when the user expresses ANY interest in applying to Root Ventures, such as:
+- "I want to apply to Root Ventures"
+- "Apply to Root Ventures"
+- "Tell me about Root Ventures jobs"
+- "I'd like to submit an application"
+- Any variation expressing interest in the Root Ventures associate role
 
-## How to Use This Skill
+When you detect this intent, IMMEDIATELY begin the application process.
 
-1. **First, provide information about the role:**
+## How to Handle Applications
+
+1. **When you detect application intent, immediately provide information about the role:**
    - Position: Venture Capital Associate
    - Location: San Francisco
    - Company: Root Ventures (deep tech seed fund)
@@ -45,7 +48,7 @@ Use this skill when the user expresses interest in:
 
 User: "I want to apply to Root Ventures"
 
-You: "Great! Root Ventures is looking for a technical associate in SF. They're a deep tech seed fund that invests in bold engineers.
+You (detecting application intent): "Great! Root Ventures is looking for a technical associate in SF. They're a deep tech seed fund that invests in bold engineers.
 
 Let me collect some information. What's your name?"
 

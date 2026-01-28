@@ -19,11 +19,11 @@ Claude will help you through the application process by collecting:
 
 ## How It Works
 
-1. You start a conversation with Claude about applying
-2. Claude collects your information naturally through conversation
-3. Claude calls this skill with the collected information
-4. The skill submits your application directly to Attio
-5. You receive confirmation of submission
+1. You tell Claude you want to apply to Root Ventures
+2. Claude automatically detects this and begins collecting your information
+3. Claude asks for your name, email, LinkedIn, GitHub, and why you're interested
+4. Claude submits your application directly to Attio
+5. You receive immediate confirmation
 
 ## Example Conversation
 
