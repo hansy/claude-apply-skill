@@ -103,7 +103,11 @@ JSON_PAYLOAD=$(jq -n \
 )
 
 # Submit to Attio
-HTTP_CODE=$(curl -s -w "%{http_code}" -o /tmp/attio_response.txt \
+# Create secure temporary file
+TEMP_FILE=$(mktemp)
+trap "rm -f $TEMP_FILE" EXIT
+
+HTTP_CODE=$(curl -s -w "%{http_code}" -o "$TEMP_FILE" \
   -X POST "$ATTIO_WEBHOOK" \
   -H "Content-Type: application/json" \
   -d "$JSON_PAYLOAD")
@@ -124,7 +128,7 @@ else
   echo "❌ **Error submitting application**"
   echo ""
   echo "HTTP Status: $HTTP_CODE"
-  echo "Response: $(cat /tmp/attio_response.txt)"
+  echo "Response: $(cat "$TEMP_FILE")"
   echo ""
   echo "Please try again or email us directly at hello@root.vc"
   exit 1
