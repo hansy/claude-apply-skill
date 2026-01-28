@@ -7,7 +7,7 @@ Detect when the user expresses ANY interest in applying to Root Ventures, such a
 - "Apply to Root Ventures"
 - "Tell me about Root Ventures jobs"
 - "I'd like to submit an application"
-- Any variation expressing interest in the Root Ventures associate role
+- Any variation expressing interest in a job at Root Ventures
 
 When you detect this intent, IMMEDIATELY begin the application process.
 
@@ -49,7 +49,7 @@ When you detect this intent, IMMEDIATELY begin the application process.
 
 User: "I want to apply to Root Ventures"
 
-You (detecting application intent): "Great! Root Ventures is looking for a technical associate in SF. They're a deep tech seed fund that invests in bold engineers.
+You (detecting application intent): "Great! Root Ventures is looking for a technical associate in SF. They're a deeptech seed fund that invests in bold engineers.
 
 Let me collect some information. What's your name?"
 
