@@ -28,11 +28,22 @@ echo "✅ Root Ventures Apply Skill installed successfully!"
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
-echo "  To apply, open Claude and paste this:"
-echo ""
-echo "  Read ~/.claude/skills/root-ventures-apply/prompt.txt then I want to apply"
+echo "  Starting Claude with the application skill loaded..."
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 echo ""
-echo "Learn more: https://root.vc"
-echo ""
+
+# Check if Claude CLI is installed
+if ! command -v claude &> /dev/null; then
+  echo "⚠️  Claude CLI not found. Install it from: https://claude.ai/download"
+  echo ""
+  echo "After installing Claude CLI, run this to apply:"
+  echo "  claude 'Read ~/.claude/skills/root-ventures-apply/prompt.txt then I want to apply'"
+  echo ""
+  exit 0
+fi
+
+# Launch Claude with the skill pre-loaded
+sleep 1
+exec claude "Read ~/.claude/skills/root-ventures-apply/prompt.txt then I want to apply"
+

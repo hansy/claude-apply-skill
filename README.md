@@ -2,22 +2,21 @@
 
 Apply to Root Ventures positions directly through Claude CLI.
 
-## Installation
+## Installation & Usage
+
+Just run this one command:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/rootvc/claude-apply-skill/main/install.sh | bash
 ```
 
-## Usage
-
-After installation, open Claude CLI and paste this single line:
-
-```
-Read ~/.claude/skills/root-ventures-apply/prompt.txt then I want to apply
-```
-
-That's it! Claude will:
+That's it! The installer will:
+- Download the skill files
+- Automatically launch Claude CLI
 - Load the application skill
+- Start the conversational application process
+
+Claude will then:
 - Guide you through the application
 - Collect your information conversationally
 - Submit directly to Root Ventures
@@ -32,17 +31,26 @@ That's it! Claude will:
 
 ## How It Works
 
-1. You paste the command in Claude CLI
-2. Claude reads the skill instructions
-3. Claude starts the conversational application process
-4. You provide your information naturally
-5. Claude submits your application to Attio
-6. You receive immediate confirmation
+1. You run the one-line install command
+2. The installer downloads skill files and launches Claude
+3. Claude automatically reads the skill instructions
+4. Claude starts the conversational application process
+5. You provide your information naturally
+6. Claude submits your application to Attio
+7. You receive immediate confirmation
 
 ## Example
 
-```
-You: Read ~/.claude/skills/root-ventures-apply/prompt.txt then I want to apply
+```bash
+$ curl -fsSL https://raw.githubusercontent.com/rootvc/claude-apply-skill/main/install.sh | bash
+
+🚀 Installing Root Ventures Apply Skill...
+📥 Downloading skill files...
+✅ Root Ventures Apply Skill installed successfully!
+
+Starting Claude with the application skill loaded...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Claude: Great! Root Ventures is looking for a technical associate in SF.
         Let me collect some information. What's your name?
