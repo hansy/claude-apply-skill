@@ -10,6 +10,31 @@ CLAUDE_CMD=""
 CODEX_CMD=""
 TARGET=""
 
+# Allow non-interactive selection via args or env
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --claude)
+      TARGET="claude"
+      shift
+      ;;
+    --codex)
+      TARGET="codex"
+      shift
+      ;;
+    --target)
+      TARGET="$2"
+      shift 2
+      ;;
+    *)
+      shift
+      ;;
+  esac
+done
+
+if [[ -z "$TARGET" && -n "$ROOT_APPLY_TARGET" ]]; then
+  TARGET="$ROOT_APPLY_TARGET"
+fi
+
 # Detect Claude CLI
 if command -v claude &> /dev/null; then
   CLAUDE_CMD="claude"
@@ -28,12 +53,23 @@ prompt_choice() {
   local prompt="$1"
   local choice=""
 
+  if [[ ! -t 0 && ! -r /dev/tty ]]; then
+    echo ""
+    echo "No interactive terminal detected."
+    echo "Re-run with --claude or --codex, or set ROOT_APPLY_TARGET=claude|codex."
+    exit 1
+  fi
+
   while true; do
     echo ""
     echo "$prompt"
     echo "1) Claude"
     echo "2) Codex"
-    read -r choice
+    if [[ -t 0 ]]; then
+      read -r choice
+    else
+      read -r choice < /dev/tty
+    fi
     case "$choice" in
       1|claude|Claude|CLAUDE)
         TARGET="claude"
