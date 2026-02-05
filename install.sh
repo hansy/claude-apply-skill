@@ -288,5 +288,13 @@ if [[ "$TARGET" == "codex" ]]; then
   echo ""
 
   sleep 1
-  exec "$CODEX_CMD"
+  if [[ -t 0 ]]; then
+    exec "$CODEX_CMD"
+  elif [[ -r /dev/tty ]]; then
+    exec "$CODEX_CMD" < /dev/tty
+  else
+    echo "❌ Codex requires an interactive terminal."
+    echo "Re-run this installer in a terminal without piping stdin."
+    exit 1
+  fi
 fi
