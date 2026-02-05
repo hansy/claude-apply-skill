@@ -7,7 +7,7 @@ Apply to Root Ventures positions directly through Claude or Codex CLI.
 Just run this one command:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/rootvc/claude-apply-skill/main/install.sh | bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/rootvc/claude-apply-skill/main/install.sh)"
 ```
 
 The installer will:
@@ -44,7 +44,7 @@ I want to apply to Root Ventures
 ## Example
 
 ```bash
-$ curl -fsSL https://raw.githubusercontent.com/rootvc/claude-apply-skill/main/install.sh | bash
+$ bash -c "$(curl -fsSL https://raw.githubusercontent.com/rootvc/claude-apply-skill/main/install.sh)"
 
 🚀 Installing Root Ventures Apply Skill...
 📥 Downloading skill files...
